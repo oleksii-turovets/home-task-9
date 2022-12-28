@@ -200,7 +200,9 @@ body {
 .search button:hover{
     cursor: pointer;
 }
-
+.cart>a{
+    position: relative;
+}
 .cart-content {
     height: 40px;
     width: 40px;
@@ -210,8 +212,23 @@ body {
     background-position: center;
     position: relative;
 }
+.cart-counter{
+    text-decoration: none;
+    font-size: 12px;
+    color: white;
+    background: #2c71b8;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -25%;
+    left: -25%;
+    z-index: 10;
+}
 
-.cart-content::before{
+/* .cart-content::before{
     content: attr(counter);
     display: none;
     text-decoration: none;
@@ -226,9 +243,9 @@ body {
     position: absolute;
     top: -25%;
     left: -25%;
-    /* transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
     z-index: 10;
-}
+} */
 
 .cart-content:hover {
     background-color: #2c71b8;
@@ -599,12 +616,12 @@ body {
     background-image: url(img/focus-white-icon.png);
 }
 
-.status-buttons [class*="btn-"]:hover, .status-buttons [class*="btn-"]:focus {
+.status-buttons [class*="btn-"]:hover, /*.status-buttons [class*="btn-"]:focus,*/ .status-buttons .btn-like-active {
     cursor: pointer;
     background-color: #2c71b8;
 }
 
-.btn-like:hover, .btn-like:focus {
+.btn-like:hover, /*.btn-like:focus,*/ .status-buttons .btn-like-active {
     background-image: url(img/heart-white-icon.png);
 }
 
@@ -639,4 +656,50 @@ body {
     line-height: 100px;
     text-align: center;
     font-weight: 300;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 15;
+}
+.modal-block {
+    width: 300px;
+    height: 250px;
+    background-color: white;
+    padding: 15px;
+    margin: 100px auto;
+}
+.form-call {
+    position: relative;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.form-call h3 {
+    margin-bottom: 15px;
+}
+
+.form-field {
+    margin-bottom: 15px;
+}
+
+.btn-close {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    cursor: pointer;
+}
+
+.show {
+    display: block;
+}
+
+.hide{
+    display: none;
 }
