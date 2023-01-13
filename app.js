@@ -73,28 +73,58 @@ function closeModal() {
 
 // like
 
+// let likeBtns = document.querySelectorAll(".btn-like");
+
+// likeBtns.forEach((item) =>
+//     item.addEventListener("click", function () {
+//         if (item.classList.contains("btn-like-active")) {
+//             item.classList.remove("btn-like-active");
+//         } else {
+//             item.classList.add("btn-like-active");
+//         }
+//     }))
+
 let likeBtns = document.querySelectorAll(".btn-like");
 
 likeBtns.forEach((item) =>
-    item.addEventListener("click", function () {
-        if (item.classList.contains("btn-like-active")) {
-            item.classList.remove("btn-like-active");
-        } else {
-            item.classList.add("btn-like-active");
-        }
-}))
-
+  item.addEventListener("click", function () {
+    // if (item.classList.contains("btn-like-active")) {
+    //         item.classList.remove("btn-like-active");
+    //     } else {
+    //         item.classList.add("btn-like-active");
+    //     }
+    item.classList.toggle("btn-like-active");
+  })
+);
 
 // scroll modal
 
-let scrollToModal = function () {
-  if (window.scrollY >= document.body.clientHeight / 2) {
-    openModal();
-      window.removeEventListener("scroll", scrollToModal);
-  }
-};
+/* my version */
+// let scrollToModal = function () {
+//   if (window.scrollY >= document.body.clientHeight / 2) {
+//     openModal();
+//       window.removeEventListener("scroll", scrollToModal);
+//   }
+// };
 
-window.addEventListener("scroll",scrollToModal);
+// window.addEventListener("scroll",scrollToModal);
 
+/* lessons version */
+// function showModalByScroll() {
+//   if (window.scrollY >= document.body.scrollHeight / 2) {
+//     openModal();
+//     window.removeEventListener("scroll", showModalByScroll);
+//   }
+// }
+
+// window.addEventListener("scroll", showModalByScroll);
+
+// slider
+
+$(".slider-content").slick({
+  autoplay: true,
+  dots: true,
+  draggable: true,
+});
 
 
