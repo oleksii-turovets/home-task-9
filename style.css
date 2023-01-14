@@ -782,3 +782,48 @@ body {
 .slick-dots li button:focus {
     background-color: white;
 }
+
+
+.product-quantity {
+    margin-bottom: 15px;
+    width: 210px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-quantity input {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    width: calc(100% - 30px - 100px);
+    border: 1px solid white;
+    background: none;
+    color: white;
+    font-size: 18px;
+}
+
+.product-quantity input:focus-visible {
+    outline: none;
+}
+
+.product-quantity [class*="-btn"]{
+    border: 1px solid white;
+    background: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    padding: 0;
+    cursor: pointer;
+}
+.product-quantity [class*="-btn"]:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.product-quantity [class*="-btn"]:disabled{
+    opacity: 0.5;
+    background: none;
+    cursor:auto;
+}
