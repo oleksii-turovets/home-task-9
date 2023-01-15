@@ -193,13 +193,20 @@ function Counter(incrementBtn, decrementBtn, inputField) {
 //   console.log(counter);
 // }
 
-productsCount.forEach((item, i) => {
-  const counter = new Counter(
-    incrementBtns[i],
-    decrementBtns[i],
-    productsCount[i]
-  );
-});
+// productsCount.forEach((item, i) => {
+//   const counter = new Counter(
+//     incrementBtns[i],
+//     decrementBtns[i],
+//     productsCount[i]
+//   );
+// });
+
+let counters = [];
+productsCount.forEach(
+  (item, i) =>
+    (counters[i] = new Counter(incrementBtns[i], decrementBtns[i], item))
+);
+
 
 
 // counter
