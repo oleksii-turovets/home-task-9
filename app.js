@@ -25,19 +25,21 @@ let btnClose = document.querySelector(".btn-close");
 //   modal.classList.remove("show");
 // });
 
-moreDetailsBtns.forEach((item) => item.addEventListener("click", function () {
-    openModal()
-}));
+moreDetailsBtns.forEach((item) =>
+    item.addEventListener("click", function () {
+        openModal();
+    })
+);
 
 btnClose.addEventListener("click", function () {
-    closeModal()
+    closeModal();
 });
 
 modal.addEventListener("click", function (e) {
     if (e.target === modal) {
         closeModal();
     }
-})
+});
 
 function openModal() {
     modal.classList.add("show");
@@ -65,14 +67,14 @@ function closeModal() {
 let likeBtns = document.querySelectorAll(".btn-like");
 
 likeBtns.forEach((item) =>
-  item.addEventListener("click", function () {
-    // if (item.classList.contains("btn-like-active")) {
-    //         item.classList.remove("btn-like-active");
-    //     } else {
-    //         item.classList.add("btn-like-active");
-    //     }
-    item.classList.toggle("btn-like-active");
-  })
+    item.addEventListener("click", function () {
+        // if (item.classList.contains("btn-like-active")) {
+        //         item.classList.remove("btn-like-active");
+        //     } else {
+        //         item.classList.add("btn-like-active");
+        //     }
+        item.classList.toggle("btn-like-active");
+    })
 );
 
 // scroll modal
@@ -88,21 +90,21 @@ likeBtns.forEach((item) =>
 // window.addEventListener("scroll",scrollToModal);
 
 /* lessons version */
-// function showModalByScroll() {
-//   if (window.scrollY >= document.body.scrollHeight / 2) {
-//     openModal();
-//     window.removeEventListener("scroll", showModalByScroll);
-//   }
-// }
+function showModalByScroll() {
+    if (window.scrollY >= document.body.scrollHeight / 2) {
+        openModal();
+        window.removeEventListener("scroll", showModalByScroll);
+    }
+}
 
-// window.addEventListener("scroll", showModalByScroll);
+window.addEventListener("scroll", showModalByScroll);
 
 // slider
 
 $(".slider-content").slick({
-  autoplay: true,
-  dots: true,
-  draggable: true,
+    autoplay: true,
+    dots: true,
+    draggable: true,
 });
 
 /* product quantity*/
@@ -156,34 +158,39 @@ let productsCount = document.querySelectorAll(".product-quantity input");
 // console.log(incrementBtns);
 // console.log(productsCount);
 
-
 function Counter(incrementBtn, decrementBtn, inputField) {
-  this.domRefs = {
-    incrementBtn,
-    decrementBtn,
-    inputField,
-  };
+    this.domRefs = {
+        incrementBtn,
+        decrementBtn,
+        inputField,
+    };
 
-  this.toggleButtonState = function () {
-    let count = this.domRefs.inputField.value;
-    this.domRefs.decrementBtn.disabled = count <= 1;
-    this.domRefs.incrementBtn.disabled = count >= 10;
-  };
-  
-  this.toggleButtonState();
+    this.toggleButtonState = function () {
+        let count = this.domRefs.inputField.value;
+        this.domRefs.decrementBtn.disabled = count <= 1;
+        this.domRefs.incrementBtn.disabled = count >= 10;
+    };
 
-  this.increment = function () {
-    this.domRefs.inputField.value = +this.domRefs.inputField.value + 1;
     this.toggleButtonState();
-  }
 
-  this.decrement = function () {
-    this.domRefs.inputField.value = +this.domRefs.inputField.value - 1;
-    this.toggleButtonState();
-  };
+    this.increment = function () {
+        this.domRefs.inputField.value = +this.domRefs.inputField.value + 1;
+        this.toggleButtonState();
+    };
 
-  this.domRefs.incrementBtn.addEventListener("click", this.increment.bind(this));
-  this.domRefs.decrementBtn.addEventListener("click", this.decrement.bind(this));
+    this.decrement = function () {
+        this.domRefs.inputField.value = +this.domRefs.inputField.value - 1;
+        this.toggleButtonState();
+    };
+
+    this.domRefs.incrementBtn.addEventListener(
+        "click",
+        this.increment.bind(this)
+    );
+    this.domRefs.decrementBtn.addEventListener(
+        "click",
+        this.decrement.bind(this)
+    );
 }
 
 // const counter1 = new Counter(incrementBtns, decrementBtns, productsCount);
@@ -203,33 +210,34 @@ function Counter(incrementBtn, decrementBtn, inputField) {
 
 let counters = [];
 productsCount.forEach(
-  (item, i) =>
-    (counters[i] = new Counter(incrementBtns[i], decrementBtns[i], item))
+    (item, i) =>
+        (counters[i] = new Counter(incrementBtns[i], decrementBtns[i], item))
 );
-
-
 
 // counter
 let productsCountEl = document.querySelector(".cart-counter");
 let addToCartBtns = document.querySelectorAll(".add-to-cart");
 if (+productsCountEl.textContent === 0) {
-  productsCountEl.classList.add("hide");
+    productsCountEl.classList.add("hide");
 }
-  // for (let button of addToCartBtns) {
-  //   button.addEventListener("click", function () {
-  //       productsCountEl.textContent = +productsCountEl.textContent + 1;
-  //       if (+productsCountEl.textContent !== 0) {
-  //         productsCountEl.classList.remove("hide");
-  //       }
-  //   });
+// for (let button of addToCartBtns) {
+//   button.addEventListener("click", function () {
+//       productsCountEl.textContent = +productsCountEl.textContent + 1;
+//       if (+productsCountEl.textContent !== 0) {
+//         productsCountEl.classList.remove("hide");
+//       }
+//   });
 
-  // }
+// }
 
 addToCartBtns.forEach((item, i) =>
     item.addEventListener("click", function () {
-      productsCountEl.textContent = +productsCountEl.textContent + +productsCount[i].value;
-      if (+productsCountEl.textContent !== 0) {
-        productsCountEl.classList.remove("hide");
-      }
-}));
+        productsCountEl.textContent =
+            +productsCountEl.textContent + +productsCount[i].value;
+        if (+productsCountEl.textContent !== 0) {
+            productsCountEl.classList.remove("hide");
+        }
+    })
+);
 
+AOS.init();

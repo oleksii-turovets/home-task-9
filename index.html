@@ -7,10 +7,14 @@
     <title>Shop-project</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
+
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -94,7 +98,7 @@
             </div>
         </div>
         <div class="container">
-            <div class="goods-search row">
+            <div class="goods-search row" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="800">
                 <div class="col-3">
                     <div class="filter">
                         <div class="filter-feature">
@@ -353,7 +357,7 @@
                                             type="button">
                                                 ADD TO CART <img src="img/cart-white-icon.png">
                                             </button>
-                                        <div>
+                                        </div>
                                     </div>
                                     <div class="status-buttons">
                                         <div>
@@ -366,7 +370,7 @@
                                 </div>
                             </li>
                             <li class="col-4">
-                                <div class="goods-item">
+                                <div class="goods-item"  data-aos="fade-up">
                                     <a href="">
                                         <div class="item-image">
                                             <img src="img/laptop-icon.png" alt="Laptop">
@@ -414,7 +418,7 @@
                                 </div>
                             </li>
                             <li class="col-4">
-                                <div class="goods-item">
+                                <div class="goods-item" data-aos="fade-up">
                                     <a href="">
                                         <div class="item-image">
                                             <img src="img/ipod-icon.png" alt="Ipod">
@@ -462,7 +466,7 @@
                                 </div>
                             </li>
                             <li class="col-4">
-                                <div class="goods-item">
+                                <div class="goods-item" data-aos="fade-up">
                                     <a href="">
                                         <div class="item-image">
                                             <img src="img/phone-icon.png" alt="Phone">
@@ -510,7 +514,7 @@
                                 </div>
                             </li>
                             <li class="col-4">
-                                <div class="goods-item">
+                                <div class="goods-item"  data-aos="fade-up">
                                     <a href="">
                                         <div class="item-image">
                                             <img src="img/tablet-icon.png" alt="Tablet">
@@ -558,7 +562,7 @@
                                 </div>
                             </li>
                             <li class="col-4">
-                                <div class="goods-item">
+                                <div class="goods-item" data-aos="fade-up">
                                     <a href="">
                                         <div class="item-image">
                                             <img src="img/stb-icon-2.png" alt="STB">
@@ -606,7 +610,7 @@
                                 </div>
                             </li>
                             <li class="col-4">
-                                <div class="goods-item">
+                                <div class="goods-item" data-aos="fade-up">
                                     <a href="">
                                         <div class="item-image">
                                             <img src="img/watch-icon-2.png" alt="Watch">
@@ -653,7 +657,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="load-more col-12">
+                            <li class="load-more col-12" data-aos="fade-up">
                                 <button
                                 class="btn-load-more" 
                                 type="button">
@@ -669,7 +673,9 @@
     <div class="modal">
         <div class="modal-block">
             <form action="" class="form-call">
-                <div class="btn-close">X</div>
+                <div class="btn-close material-symbols-outlined">
+                    close
+                </div>
                 <h3>Please call for more details</h3>
                 <div class="form-field">
                     <input type="text" placeholder="Your name">
@@ -677,7 +683,7 @@
                 <div class="form-field">
                     <input type="text" placeholder="Your phone">
                 </div>
-                <button class="please-call">Please call</button>
+                <button class="please-call">Please call us</button>
             </form>
         </div>
     </div>
@@ -688,6 +694,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- <script src="cart-counter.js"></script> -->
     <script src="app.js"></script>
 </body>
